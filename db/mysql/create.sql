@@ -46,8 +46,7 @@ insert into users values (1, 'admin', SHA2("password", 512), 'portal', 'admin', 
 insert into users values (2, 'guest', SHA2("password", 512), 'portal', 'guest', 'guest@portal.ext', now(), null, null, null, 1, 2);
 
 drop view if exists users_access;
--- non usare root
--- CREATE ALGORITHM=UNDEFINED DEFINER=root@localhost SQL SECURITY DEFINER VIEW users_access AS 
+
 create view users_access as 
 select 
 u.username as username,
