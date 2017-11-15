@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
 @Stateless
@@ -31,8 +32,19 @@ public class SessionBean {
         return "/private/index?faces-redirect=true";
     }
 
-    //TODO
     public String logout() {
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        try {
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                session.invalidate();
+            }
+            request.logout();
+            //TODO set timestamp
+        } catch (ServletException ex) {
+            LOG.log(Level.SEVERE, "logout failure.", ex);
+            return "/private/index?faces-redirect=true";
+        }
         return "/index?faces-redirect=true";
     }
 
