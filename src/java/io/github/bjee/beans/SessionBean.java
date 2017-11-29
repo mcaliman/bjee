@@ -24,6 +24,7 @@ public class SessionBean {
         try {
             LOG.log(Level.INFO, this.password);
             request.login(this.getUsername(), this.getPassword());
+            request.getSession().setMaxInactiveInterval(-1);//session timeout
         } catch (ServletException ex) {
             LOG.log(Level.SEVERE, "Access denied.", ex);
             return "/index";
