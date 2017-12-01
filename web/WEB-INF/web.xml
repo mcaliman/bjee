@@ -66,4 +66,10 @@
             <transport-guarantee>NONE</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.xhtml</location>
+    </error-page>
+    
 </web-app>
