@@ -5,26 +5,33 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Bjee Public Area</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
         <h1>Bjee Public Area</h1>
         <h:form id="login-form">
-        
-        Username <h:inputText value="#{sessionBean.username}" /><br/>
-        Password <h:inputSecret value="#{sessionBean.password}" /><br/>
-        
-        <h:commandButton value="Login"
-                         action="#{sessionBean.login()}"
-                         class="btn btn-block pull-right" />
 
-        <ui:repeat  value="#{facesContext.messageList}" var="message">
-            <h:outputText escape="false"
-                          class="alert alert-danger"
-                          value="#{message.summary}" />
-        </ui:repeat>
-    </h:form>
-        
-        
+            Username <h:inputText value="#{sessionBean.username}" /><br/>
+            Password <h:inputSecret value="#{sessionBean.password}" /><br/>
+
+            <h:commandButton value="Login"
+                             action="#{sessionBean.login()}"
+                             class="btn btn-block pull-right" />
+
+            <ui:repeat  value="#{facesContext.messageList}" var="message">
+                <h:outputText escape="false"
+                              class="alert alert-danger"
+                              value="#{message.summary}" />
+            </ui:repeat>
+        </h:form>
+
+
+        <br />
+        <h:link outcome="/private/groups/List" value="Show All Groups Items"/>
+        <br />
+        <h:link outcome="/private/users/List" value="Show All Users Items"/>
     </h:body>
+
+
 </html>
 
