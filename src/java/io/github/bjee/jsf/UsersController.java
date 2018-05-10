@@ -25,7 +25,7 @@ public class UsersController implements Serializable {
     private Users current;
     private DataModel items = null;
     @EJB
-    private io.github.bjee.jsf.beans.UsersFacade ejbFacade;
+    private UsersFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 

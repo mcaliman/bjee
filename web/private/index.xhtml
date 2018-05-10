@@ -11,6 +11,13 @@
         <h:form id="logout">
             <h:commandButton value="Logout" action="#{sessionBean.logout()}" />
         </h:form>
+        
+        
+        <br />
+        <h:link outcome="/private/groups/List" value="Show All Groups Items"/>
+        <br />
+        <h:link outcome="/private/users/List" value="Show All Users Items"/>
+        
     </h:body>
 </html>
 

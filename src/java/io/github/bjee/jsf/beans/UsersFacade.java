@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package io.github.bjee.jsf.beans;
 
 import io.github.bjee.entities.Users;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -27,6 +23,12 @@ public class UsersFacade extends AbstractFacade<Users> {
 
     public UsersFacade() {
         super(Users.class);
+    }
+    
+    
+     public Users find(String username) {
+        TypedQuery<Users> query = this.em.createQuery("select x from Users x where x.username='"+username+"'",Users.class);
+        return query.getSingleResult();        
     }
     
 }

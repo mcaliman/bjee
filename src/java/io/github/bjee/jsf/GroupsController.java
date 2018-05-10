@@ -25,7 +25,7 @@ public class GroupsController implements Serializable {
     private Groups current;
     private DataModel items = null;
     @EJB
-    private io.github.bjee.jsf.beans.GroupsFacade ejbFacade;
+    private GroupsFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
