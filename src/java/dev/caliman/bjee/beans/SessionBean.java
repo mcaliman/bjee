@@ -1,7 +1,7 @@
-package io.github.bjee.beans;
+package dev.caliman.bjee.beans;
 
-import io.github.bjee.entities.Users;
-import io.github.bjee.jsf.beans.UsersFacade;
+import dev.caliman.bjee.entities.Users;
+import dev.caliman.bjee.jsf.beans.UsersFacade;
 import java.security.Principal;
 import java.util.Date;
 import java.util.logging.Level;

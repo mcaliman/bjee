@@ -1,9 +1,9 @@
-package io.github.bjee.jsf;
+package dev.caliman.bjee.jsf;
 
-import io.github.bjee.entities.Groups;
-import io.github.bjee.jsf.util.JsfUtil;
-import io.github.bjee.jsf.util.PaginationHelper;
-import io.github.bjee.jsf.beans.GroupsFacade;
+import dev.caliman.bjee.entities.Groups;
+import dev.caliman.bjee.jsf.util.JsfUtil;
+import dev.caliman.bjee.jsf.util.PaginationHelper;
+import dev.caliman.bjee.jsf.beans.GroupsFacade;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;

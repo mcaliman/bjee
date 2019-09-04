@@ -1,6 +1,6 @@
-package io.github.bjee.jsf.beans;
+package dev.caliman.bjee.jsf.beans;
 
-import io.github.bjee.entities.Users;
+import dev.caliman.bjee.entities.Users;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

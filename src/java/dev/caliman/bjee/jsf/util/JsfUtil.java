@@ -1,4 +1,4 @@
-package io.github.bjee.jsf.util;
+package dev.caliman.bjee.jsf.util;
 
 import java.util.List;
 import javax.faces.application.FacesMessage;

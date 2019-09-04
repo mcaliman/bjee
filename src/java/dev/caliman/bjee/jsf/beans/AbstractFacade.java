@@ -1,4 +1,4 @@
-package io.github.bjee.jsf.beans;
+package dev.caliman.bjee.jsf.beans;
 
 import java.util.List;
 import javax.persistence.EntityManager;

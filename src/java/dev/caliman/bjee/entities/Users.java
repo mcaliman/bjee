@@ -1,4 +1,4 @@
-package io.github.bjee.entities;
+package dev.caliman.bjee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
