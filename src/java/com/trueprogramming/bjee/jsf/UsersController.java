@@ -1,9 +1,9 @@
-package dev.caliman.bjee.jsf;
+package com.trueprogramming.bjee.jsf;
 
-import dev.caliman.bjee.entities.Groups;
-import dev.caliman.bjee.jsf.util.JsfUtil;
-import dev.caliman.bjee.jsf.util.PaginationHelper;
-import dev.caliman.bjee.jsf.beans.GroupsFacade;
+import com.trueprogramming.bjee.entities.Users;
+import com.trueprogramming.bjee.jsf.util.JsfUtil;
+import com.trueprogramming.bjee.jsf.util.PaginationHelper;
+import com.trueprogramming.bjee.jsf.beans.UsersFacade;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -18,29 +18,29 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
-@Named("groupsController")
+@Named("usersController")
 @SessionScoped
-public class GroupsController implements Serializable {
+public class UsersController implements Serializable {
 
-    private Groups current;
+    private Users current;
     private DataModel items = null;
     @EJB
-    private GroupsFacade ejbFacade;
+    private UsersFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
-    public GroupsController() {
+    public UsersController() {
     }
 
-    public Groups getSelected() {
+    public Users getSelected() {
         if (current == null) {
-            current = new Groups();
+            current = new Users();
             selectedItemIndex = -1;
         }
         return current;
     }
 
-    private GroupsFacade getFacade() {
+    private UsersFacade getFacade() {
         return ejbFacade;
     }
 
@@ -68,13 +68,13 @@ public class GroupsController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Groups) getItems().getRowData();
+        current = (Users) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
 
     public String prepareCreate() {
-        current = new Groups();
+        current = new Users();
         selectedItemIndex = -1;
         return "Create";
     }
@@ -82,7 +82,7 @@ public class GroupsController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("GroupsCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsersCreated"));
             return prepareCreate();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
@@ -91,7 +91,7 @@ public class GroupsController implements Serializable {
     }
 
     public String prepareEdit() {
-        current = (Groups) getItems().getRowData();
+        current = (Users) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -99,7 +99,7 @@ public class GroupsController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("GroupsUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsersUpdated"));
             return "View";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
@@ -108,7 +108,7 @@ public class GroupsController implements Serializable {
     }
 
     public String destroy() {
-        current = (Groups) getItems().getRowData();
+        current = (Users) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -132,7 +132,7 @@ public class GroupsController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("GroupsDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsersDeleted"));
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
         }
@@ -188,21 +188,21 @@ public class GroupsController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    public Groups getGroups(java.lang.Integer id) {
+    public Users getUsers(java.lang.Integer id) {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Groups.class)
-    public static class GroupsControllerConverter implements Converter {
+    @FacesConverter(forClass = Users.class)
+    public static class UsersControllerConverter implements Converter {
 
         @Override
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            GroupsController controller = (GroupsController) facesContext.getApplication().getELResolver().
-                    getValue(facesContext.getELContext(), null, "groupsController");
-            return controller.getGroups(getKey(value));
+            UsersController controller = (UsersController) facesContext.getApplication().getELResolver().
+                    getValue(facesContext.getELContext(), null, "usersController");
+            return controller.getUsers(getKey(value));
         }
 
         java.lang.Integer getKey(String value) {
@@ -222,11 +222,11 @@ public class GroupsController implements Serializable {
             if (object == null) {
                 return null;
             }
-            if (object instanceof Groups) {
-                Groups o = (Groups) object;
+            if (object instanceof Users) {
+                Users o = (Users) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Groups.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Users.class.getName());
             }
         }
 

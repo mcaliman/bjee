@@ -1,7 +1,7 @@
-package dev.caliman.bjee.beans;
+package com.trueprogramming.bjee.beans;
 
-import dev.caliman.bjee.entities.Users;
-import dev.caliman.bjee.jsf.beans.UsersFacade;
+import com.trueprogramming.bjee.entities.Users;
+import com.trueprogramming.bjee.jsf.beans.UsersFacade;
 import java.security.Principal;
 import java.util.Date;
 import java.util.logging.Level;

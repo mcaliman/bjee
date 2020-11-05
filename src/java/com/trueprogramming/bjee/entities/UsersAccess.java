@@ -1,4 +1,4 @@
-package dev.caliman.bjee.entities;
+package com.trueprogramming.bjee.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;

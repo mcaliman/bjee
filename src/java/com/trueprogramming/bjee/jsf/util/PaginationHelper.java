@@ -1,4 +1,4 @@
-package dev.caliman.bjee.jsf.util;
+package com.trueprogramming.bjee.jsf.util;
 
 import javax.faces.model.DataModel;
 

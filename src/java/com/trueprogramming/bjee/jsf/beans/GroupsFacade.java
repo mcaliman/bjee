@@ -1,6 +1,6 @@
-package dev.caliman.bjee.jsf.beans;
+package com.trueprogramming.bjee.jsf.beans;
 
-import dev.caliman.bjee.entities.Groups;
+import com.trueprogramming.bjee.entities.Groups;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
