@@ -8,8 +8,7 @@ import javax.persistence.criteria.Root;
 
 /**
  *
- * @author mcaliman
- * @param <T>
+ * @author Massimo Caliman
  */
 public abstract class AbstractFacade<T> {
 
