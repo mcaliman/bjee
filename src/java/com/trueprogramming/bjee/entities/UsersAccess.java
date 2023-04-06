@@ -12,14 +12,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ *
+ * @author Massimo Caliman
+ */
 @Entity
 @Table(name = "users_access")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "UsersAccess.findAll", query = "SELECT u FROM UsersAccess u")
-    , @NamedQuery(name = "UsersAccess.findByUsername", query = "SELECT u FROM UsersAccess u WHERE u.username = :username")
-    , @NamedQuery(name = "UsersAccess.findByPassword", query = "SELECT u FROM UsersAccess u WHERE u.password = :password")
-    , @NamedQuery(name = "UsersAccess.findByGroupName", query = "SELECT u FROM UsersAccess u WHERE u.groupName = :groupName")})
+    @NamedQuery(name = "UsersAccess.findAll", query = "SELECT u FROM UsersAccess u"),
+    @NamedQuery(name = "UsersAccess.findByUsername", query = "SELECT u FROM UsersAccess u WHERE u.username = :username"),
+    @NamedQuery(name = "UsersAccess.findByPassword", query = "SELECT u FROM UsersAccess u WHERE u.password = :password"),
+    @NamedQuery(name = "UsersAccess.findByGroupName", query = "SELECT u FROM UsersAccess u WHERE u.groupName = :groupName")})
 public class UsersAccess implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -66,5 +70,5 @@ public class UsersAccess implements Serializable {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-    
+
 }

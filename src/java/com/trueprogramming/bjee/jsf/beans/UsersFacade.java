@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 
 /**
  *
- * @author mcaliman
+ * @author Massimo Caliman
  */
 @Stateless
 public class UsersFacade extends AbstractFacade<Users> {
@@ -24,11 +24,10 @@ public class UsersFacade extends AbstractFacade<Users> {
     public UsersFacade() {
         super(Users.class);
     }
-    
-    
-     public Users find(String username) {
-        TypedQuery<Users> query = this.em.createQuery("select x from Users x where x.username='"+username+"'",Users.class);
-        return query.getSingleResult();        
+
+    public Users find(String username) {
+        TypedQuery<Users> query = this.em.createQuery("select x from Users x where x.username='" + username + "'", Users.class);
+        return query.getSingleResult();
     }
-    
+
 }

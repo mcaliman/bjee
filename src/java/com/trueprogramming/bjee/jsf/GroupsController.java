@@ -18,6 +18,10 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+/**
+ *
+ * @author Massimo Caliman
+ */
 @Named("groupsController")
 @SessionScoped
 public class GroupsController implements Serializable {

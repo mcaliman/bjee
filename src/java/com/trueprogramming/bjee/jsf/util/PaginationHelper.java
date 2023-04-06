@@ -2,6 +2,10 @@ package com.trueprogramming.bjee.jsf.util;
 
 import javax.faces.model.DataModel;
 
+/**
+ *
+ * @author Massimo Caliman
+ */
 public abstract class PaginationHelper {
 
     private int pageSize;

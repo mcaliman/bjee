@@ -15,6 +15,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author Massimo Caliman
+ */
 @Stateless
 @Named
 public class SessionBean {
